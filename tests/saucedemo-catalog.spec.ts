@@ -1,5 +1,5 @@
-
 import { test, expect } from '@playwright/test';
+
 test('afficher le catalogue des produits', async ({ page }) => {
   await page.goto('https://www.saucedemo.com/');
 
@@ -8,6 +8,7 @@ test('afficher le catalogue des produits', async ({ page }) => {
   await page.getByRole('button', { name: 'Login' }).click();
 
   await expect(page).toHaveURL(/inventory\.html/);
+
   await expect(
     page.getByText('Products', { exact: true })
   ).toBeVisible();

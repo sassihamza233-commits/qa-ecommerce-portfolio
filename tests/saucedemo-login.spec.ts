@@ -65,3 +65,28 @@ test('afficher le catalogue des produits', async ({ page }) => {
     page.locator('.inventory_item')
   ).toHaveCount(6);
 });
+
+
+test('connexion refusée avec un utilisateur inconnu', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com/');
+
+  await page.getByPlaceholder('Username').fill('unknown_user');
+  await page.getByPlaceholder('Password').fill('secret_sauce');
+  await page.getByRole('button', { name: 'Login' }).click();
+
+  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="error"]'))
+    .toContainText('Username and password do not match');
+});
+
+test('connexion refusée avec un compte bloqué', async ({ page }) => {
+  await page.goto('https://www.saucedemo.com/');
+
+  await page.getByPlaceholder('Username').fill('locked_out_user');
+  await page.getByPlaceholder('Password').fill('secret_sauce');
+  await page.getByRole('button', { name: 'Login' }).click();
+
+  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="error"]'))
+    .toContainText('locked out');
+});
