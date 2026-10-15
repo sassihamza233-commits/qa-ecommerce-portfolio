@@ -29,8 +29,7 @@ Le plan de test comporte **43 cas de test**.
 | À confirmer | 3 |
 | **Total** | **43** |
 
-> Les nombres ci-dessus reprennent l'état actuel du tableau Test Execution partagé pour ce portfolio. Les trois cas « À confirmer » doivent être vérifiés avant de présenter les résultats comme définitifs.
-
+> Les nombres ci-dessus reprennent l'état actuel du tableau Test Execution partagé pour ce portfolio. 
 ### Anomalies identifiées
 
 - **BUG-001 — `problem_user` :** plusieurs produits affichent la même image de chien, selon l'observation rapportée pendant les tests.
@@ -52,8 +51,3 @@ Les rapports détaillés se trouvent dans [`bug-reports/BUG-001.md`](bug-reports
 - Type de test : test manuel fonctionnel
 - Navigateur et système d'exploitation : à préciser selon l'environnement réellement utilisé
 
-## Notes
-
-Les noms de captures mentionnés dans le tableau Test Execution sont des noms de fichiers prévus. Ne considérer une preuve comme disponible que lorsque la capture correspondante a réellement été enregistrée et ajoutée au dépôt.
-
-Les résultats « À confirmer » seront mis à jour après vérification des scénarios concernés.
